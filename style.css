@@ -9,44 +9,58 @@ body, html {
 
 .container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* 子元素垂直排列 */
   align-items: center;
-  width: 80%; /* 控制整体宽度 */
+  width: 90%;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .advert {
   flex: 1;
   text-align: center;
-  padding: 20px;
-  background-color: #ffeb3b; /* 醒目的背景色 */
-  color: #d32f2f; /* 鲜艳的文字颜色 */
+  padding: 10px;
+  margin: 10px;
+  background-color: #ffeb3b;
+  color: #d32f2f;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-  margin: 0 20px; /* 在广告和图片之间添加间隙 */
-  font-size: 24px; /* 增大字体大小 */
-  font-weight: bold; /* 加粗字体 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.advert-top {
+  width: 100%; /* 确保顶部广告宽度与图片一致 */
+  margin-bottom: 20px; /* 与图片之间的距离 */
 }
 
 img {
-  max-width: 300px; /* 控制图片大小 */
+  max-width: 600px;
   border: 5px solid #333;
   border-radius: 10px;
+  margin: 0 20px;
 }
 
 @media (max-width: 768px) {
-  /* 对移动设备进行样式调整 */
-  .container {
+  .advert, .advert-top {
+    font-size: 18px;
+  }
+  
+  .image-container {
     flex-direction: column;
   }
-
+  
   img {
     max-width: 90%;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
-
+  
   .advert {
-    font-size: 18px;
-    margin: 10px;
-    order: -1; /* 将广告移至图片上方 */
+    order: 3; /* 确保移动设备上的广告文本排在图片下方 */
   }
 }
