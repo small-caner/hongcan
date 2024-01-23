@@ -1,0 +1,52 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%; /* 控制整体宽度 */
+}
+
+.advert {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffeb3b; /* 醒目的背景色 */
+  color: #d32f2f; /* 鲜艳的文字颜色 */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+  margin: 0 20px; /* 在广告和图片之间添加间隙 */
+  font-size: 24px; /* 增大字体大小 */
+  font-weight: bold; /* 加粗字体 */
+}
+
+img {
+  max-width: 300px; /* 控制图片大小 */
+  border: 5px solid #333;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  /* 对移动设备进行样式调整 */
+  .container {
+    flex-direction: column;
+  }
+
+  img {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .advert {
+    font-size: 18px;
+    margin: 10px;
+    order: -1; /* 将广告移至图片上方 */
+  }
+}
